@@ -46,10 +46,15 @@ public class PostRepository {
     ));
 
     public List<Post> getAllPosts() {
-        return ALL_POSTS;
+        return this.ALL_POSTS;
     }
 
     public Post findById(Long id) {
+        for(Post post : this.ALL_POSTS) {
+            if(post.getId()==id){
+                return post;
+            }
+        }
         return null;
     }
 }
